@@ -68,6 +68,7 @@ exports.login = async (req, res) => {
     const payload = {
       userId: user.id,
       username: user.username,
+      language: user.language
     };
 
     // 5. Sign token
@@ -83,6 +84,7 @@ exports.login = async (req, res) => {
         user: {
           id: user.id,
           username: user.username,
+          language: user.language,
         },
         token: token,
         expiresIn: process.env.JWT_EXPIRES_IN || "7d",
