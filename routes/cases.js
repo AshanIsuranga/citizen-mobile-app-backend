@@ -11,16 +11,3 @@ router.get("/get-selected-case", verifyToken, caseController.getSelectedCase);
 
 module.exports = router;
 
-
-
-fullnameenglish
-fullnamesinhala
-fullnametamil
-phonenumber = 9 digits, sri lankan phone
-phonecode = '+94'
-houseno
-streetname
-city
-district
-province
-language
