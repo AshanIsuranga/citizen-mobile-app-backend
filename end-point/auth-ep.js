@@ -5,7 +5,7 @@ const authDao = require("../dao/auth-dao");
 // Signup
 exports.signup = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, nic, email } = req.body;
 
     if (!username || !password) {
       return res.status(400).json({ message: "Missing fields" });
@@ -19,7 +19,7 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    const user = await authDao.createUser(username, password);
+    const user = await authDao.createUser(username, password, nic, email);
 
     return res.json({
       message: "User created",
